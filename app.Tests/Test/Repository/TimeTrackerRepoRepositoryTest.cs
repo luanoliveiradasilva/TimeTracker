@@ -7,11 +7,11 @@ using Moq;
 
 namespace app.Tests.Test.Repository
 {
-    public class TimeTrackerRepositoryTest
+    public class TimeTrackerRepoRepositoryTest
     {
         private readonly TimeTrackerContext _context;
 
-        public TimeTrackerRepositoryTest()
+        public TimeTrackerRepoRepositoryTest()
         {
             
             DbContextOptionsBuilder optionsBuilder = new DbContextOptionsBuilder()
@@ -26,10 +26,10 @@ namespace app.Tests.Test.Repository
             //Arrange
             var timeBank = MockTimebank.TimeBanks();
             
-            var repo = new TimeTrackerRepository(_context);
+            var repo = new TimeTrackerRepoRepository(_context);
 
             //Act
-            bool result = repo.AddTask(timeBank);
+            bool result = repo.AddTimeTracker(timeBank);
 
 
             //Assert
@@ -45,10 +45,10 @@ namespace app.Tests.Test.Repository
             _context.TimeBanks.Add(timeBank);
             _context.SaveChanges();
             
-            var repo = new TimeTrackerRepository(_context);
+            var repo = new TimeTrackerRepoRepository(_context);
 
             //Act
-            bool result = repo.AddTask(timeBank);
+            bool result = repo.AddTimeTracker(timeBank);
 
             //Assert
             Assert.False(result);           
