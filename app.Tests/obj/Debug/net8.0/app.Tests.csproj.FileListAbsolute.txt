@@ -113,3 +113,14 @@ c:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\obj\Debug\net8.0
 c:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\obj\Debug\net8.0\app.Tests.pdb
 c:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\obj\Debug\net8.0\app.Tests.genruntimeconfig.cache
 c:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\obj\Debug\net8.0\ref\app.Tests.dll
+c:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\obj\Debug\net8.0\app.Tests.sourcelink.json
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
