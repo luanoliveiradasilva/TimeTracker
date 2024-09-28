@@ -1,4 +1,4 @@
-﻿using app.Models.Datas;
+﻿using app.Entities;
 
 namespace app.Repository.Interfaces;
 

@@ -1,5 +1,5 @@
 ﻿using app.Infrastructure;
-using app.Models.Datas;
+using app.Entities;
 using app.Repository.Interfaces;
 
 namespace app.Repository;

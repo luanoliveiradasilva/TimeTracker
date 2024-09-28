@@ -1,3 +1,4 @@
+using app.Adapters;
 using app.Infrastructure;
 using app.Repository;
 using app.Repository.Interfaces;
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<TimeTrackerContext>(options => options.UseMySql
 (builder.Configuration.GetConnectionString("TimeTracker"), new MySqlServerVersion(new Version(8, 0, 26))));
 builder.Services.AddScoped<ITimeTrackerService, TimeTrackerService>();
 builder.Services.AddScoped<ITimeTrackerRepo, TimeTrackerRepoRepository>();
+builder.Services.AddScoped<TimeBankAdapter, TimeBankAdapter>();
 
 var app = builder.Build();
 

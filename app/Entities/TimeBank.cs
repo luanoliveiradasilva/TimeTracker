@@ -1,20 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace app.Models.Datas;
+namespace app.Entities;
 
 [Table("timebank")]
 public class TimeBank
 {
     
     [Key]
-    [Column("Id")]
+    [Column("timebancoId")]
     public int TimebankId { get; set; }
     
-    [Column("Data")]
+    [Column("dateTimeBank")]
     public string TimeData { get; set; }
     
-    [Column("start")]
+    [Column("startTimebank")]
     public string StartTime { get; set; }
     
     [Column("break")]
