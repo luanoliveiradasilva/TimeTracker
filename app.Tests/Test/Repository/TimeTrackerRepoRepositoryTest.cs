@@ -21,7 +21,7 @@ namespace app.Tests.Test.Repository
         }
 
         [Fact]
-        public void Should_Create_Time_Tracking()
+        private void Should_Create_Time_Tracking()
         {
             //Arrange
             var timeBank = MockTimebank.TimeBanks();
@@ -37,7 +37,7 @@ namespace app.Tests.Test.Repository
         }
         
         [Fact]
-        public void Should_NotCreate_Time_Tracking()
+        private void Should_NotCreate_Time_Tracking()
         {
             //Arrange
             var timeBank = MockTimebank.TimeBanks();

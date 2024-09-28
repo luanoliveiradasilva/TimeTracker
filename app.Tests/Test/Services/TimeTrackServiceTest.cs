@@ -18,7 +18,7 @@ public class TimeTrackServiceTest
     }
 
     [Fact]
-    public void Should_Create_TimeTrackService()
+    private void Should_Create_TimeTrackService()
     {
         //Arrange
         var timeBank = MockTimebank.TimeBanks();
