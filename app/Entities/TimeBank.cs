@@ -8,7 +8,7 @@ public class TimeBank
 {
     
     [Key]
-    [Column("timebancoId")]
+    [Column("timebankId")]
     public int TimebankId { get; set; }
     
     [Column("dateTimeBank")]

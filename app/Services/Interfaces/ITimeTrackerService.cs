@@ -1,8 +1,8 @@
-﻿using app.Entities;
+﻿using app.Models;
 
 namespace app. Services. Interfaces;
 
 public interface ITimeTrackerService
 {
-    bool CreateTimeTracker(TimeBank timeBank);
+    Task<bool> CreateTimeTracker(TimeBankModel timeBankModel);
 }

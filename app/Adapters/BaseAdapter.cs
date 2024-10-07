@@ -1,36 +1,40 @@
-﻿using System.Reflection;
+﻿using app.Adapters.Interfaces;
+using app.Entities;
+using app.Models;
 
 namespace app.Adapters;
 
-public class BaseAdapter<TEntity, TModel>
+public class BaseAdapter: IBaseAdapter
 {
-    public TModel MapEntityToModel(TEntity entity)
-    {
-        var model = Activator.CreateInstance<TModel>();
-
-        var propierties = GetProperty<TModel, TEntity>();
-
-        foreach (var item in propierties)
-        {
-            var value = entity.GetType().GetProperty(item).GetValue(entity);
-            model.GetType().GetProperty(item).SetValue(model, value);
-        }
-        return model;
-    }
     
-    public TEntity MapModelToEntity(TModel model)
-    {
-        var entity = Activator.CreateInstance<TEntity>();
+    public TimeBankModel  MapEntityToModel( TimeBank timeBankEntity)
+     {
+         var model = Activator.CreateInstance<TimeBankModel>();
 
-        var propierties = GetProperty<TEntity, TModel>();
+         var prop = GetProperty<TimeBankModel, TimeBank>();
 
-        foreach (var item in propierties)
-        {
-            var value = model.GetType().GetProperty(item).GetValue(model);
-            entity.GetType().GetProperty(item).SetValue(entity, value);
-        }
-        return entity;
-    }
+         foreach (var item in prop)
+         {
+             var value = timeBankEntity.GetType().GetProperty(item).GetValue(timeBankEntity);
+             model.GetType().GetProperty(item).SetValue(model, value);
+         }
+
+         return model;
+     }
+    
+     public TimeBank MapModelToEntity(TimeBankModel timeBankModels)
+     {
+         var entity = Activator.CreateInstance<TimeBank>();
+
+         var propierties = GetProperty<TimeBank, TimeBankModel>();
+
+         foreach (var property in propierties)
+         {
+             var value = timeBankModels.GetType().GetProperty(property).GetValue(timeBankModels);
+             entity.GetType().GetProperty(property).SetValue(entity, value);
+         }
+         return entity;
+     }
 
     private static List<string> GetProperty<TFrom, Tto>()
     {

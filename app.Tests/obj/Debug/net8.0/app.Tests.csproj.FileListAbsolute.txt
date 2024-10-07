@@ -124,3 +124,6 @@ C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0
 C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll

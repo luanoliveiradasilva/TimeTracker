@@ -1,4 +1,8 @@
-﻿using app.Controllers;
+﻿using app.Adapters;
+using app.Adapters.Interfaces;
+using app.Controllers;
+using app.Entities;
+using app.Models;
 using app.Services.Interfaces;
 using app.Tests.Test.Mocks;
 using Microsoft.AspNetCore.Mvc;
@@ -13,24 +17,24 @@ public class TimeTrackerControllerTest
 
     public TimeTrackerControllerTest()
     {
-        _timeTrackerService = new Mock<ITimeTrackerService>();
+        _timeTrackerService = new();
         _controller = new TimeTrackerController(_timeTrackerService.Object);
     }
 
     [Fact]
-    private void Should_Create_Time_Tracker()
+    private async Task Should_Create_Time_Tracker()
     {
         //Arrange
-        var timeBank = MockTimebank.TimeBanks();
+        var inputTimeBank = MockTimebank.TimeBankInput();
         
         _timeTrackerService
-            .Setup(s => s.CreateTimeTracker(timeBank))
-            .Returns(true);
+            .Setup(s => s.CreateTimeTracker(inputTimeBank))
+            .ReturnsAsync(true);
         
         //Act
-        var postResult = _controller.CreateTimebanck(timeBank);
+        var postResult = await _controller.CreateTimebanck(inputTimeBank);
         
         //Assert
-        Assert.True(postResult is OkObjectResult);
+        Assert.True(postResult is OkResult);
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace app.Models;
 
-public class TimeBankModels
+public class TimeBankModel
 {
     public string TimeData { get; set; }
     public string StartTime { get; set; }

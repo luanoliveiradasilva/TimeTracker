@@ -1,4 +1,5 @@
 using app.Adapters;
+using app.Adapters.Interfaces;
 using app.Infrastructure;
 using app.Repository;
 using app.Repository.Interfaces;
@@ -17,9 +18,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TimeTrackerContext>(options => options.UseMySql
 (builder.Configuration.GetConnectionString("TimeTracker"), new MySqlServerVersion(new Version(8, 0, 26))));
-builder.Services.AddScoped<ITimeTrackerService, TimeTrackerService>();
-builder.Services.AddScoped<ITimeTrackerRepo, TimeTrackerRepoRepository>();
-builder.Services.AddScoped<TimeBankAdapter, TimeBankAdapter>();
+/*builder.Services.AddScoped<ITimeTrackerService, TimeTrackerService>();*/
+builder.Services.AddScoped<ITimeTrackerRepo, TimeTrackerRepo>();
+builder.Services.AddScoped<IBaseAdapter, BaseAdapter>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("http://localhost:5173")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
 
 var app = builder.Build();
 
@@ -29,6 +37,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

@@ -1,8 +1,11 @@
 ﻿using app.Entities;
+using app.Models;
 
 namespace app.Repository.Interfaces;
 
 public interface ITimeTrackerRepo
 {
-    bool AddTimeTracker(TimeBank timeBank);
+    Task<bool> AddTimeTracker(TimeBank timeBank);
+    
+    IQueryable<TimeBank> GetTimeTracking(string date);
 }

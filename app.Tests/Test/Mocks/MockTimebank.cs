@@ -1,4 +1,5 @@
 ﻿using app.Entities;
+using app.Models;
 
 namespace app.Tests.Test.Mocks;
 
@@ -16,8 +17,22 @@ internal class MockTimebank
             Clockin = dateTimeOffset.ToString("t"), 
             Clockout = dateTimeOffset.ToString("t")
         };
-      
-
+        
+        return timeBanks;
+    }
+    
+    public static TimeBankModel TimeBankInput()
+    {
+        DateTimeOffset dateTimeOffset = DateTimeOffset.Now;
+        TimeBankModel timeBanks = new()
+        { 
+            TimeData  = dateTimeOffset.ToString("d"), 
+            StartTime = dateTimeOffset.ToString("t"), 
+            BreakTime = dateTimeOffset.ToString("t"), 
+            Clockin = dateTimeOffset.ToString("t"), 
+            Clockout = dateTimeOffset.ToString("t")
+        };
+        
         return timeBanks;
     }
 }
