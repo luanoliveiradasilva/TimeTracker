@@ -23,12 +23,5 @@ public class TimeTrackerRepo(
         return true;
     }
 
-    public async Task<TimeBank> GetTimeTracking(string date)
-    {
-    
-        return await context.TimeBanks.Where(t => t.TimeData == date).FirstAsync();  
-    }
-        
-     
-    
+    public async Task<TimeBank> GetTimeTracking(string date)=>await context.TimeBanks.Where(t => t.TimeData == date).FirstAsync();  
 }
