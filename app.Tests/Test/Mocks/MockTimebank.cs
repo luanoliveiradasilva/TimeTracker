@@ -15,7 +15,8 @@ internal class MockTimebank
             StartTime = dateTimeOffset.ToString("t"), 
             BreakTime = dateTimeOffset.ToString("t"), 
             Clockin = dateTimeOffset.ToString("t"), 
-            Clockout = dateTimeOffset.ToString("t")
+            Clockout = dateTimeOffset.ToString("t"),
+            Description = "Teste do texto"
         };
         
         return timeBanks;
@@ -30,7 +31,8 @@ internal class MockTimebank
             StartTime = dateTimeOffset.ToString("t"), 
             BreakTime = dateTimeOffset.ToString("t"), 
             Clockin = dateTimeOffset.ToString("t"), 
-            Clockout = dateTimeOffset.ToString("t")
+            Clockout = dateTimeOffset.ToString("t"),
+            Description = "Teste do texto"
         };
         
         return timeBanks;

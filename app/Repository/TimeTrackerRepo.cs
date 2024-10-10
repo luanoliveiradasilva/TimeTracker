@@ -22,16 +22,13 @@ public class TimeTrackerRepo(
         
         return true;
     }
+
+    public async Task<TimeBank> GetTimeTracking(string date)
+    {
     
-    
-    public IQueryable<TimeBank> GetTimeTracking(string date)
-    { 
-        var select = context.TimeBanks.Where(t => t.TimeData == date);
-        
-        if(!select.Any()) 
-            return null!;
-        
-        return select;
+        return await context.TimeBanks.Where(t => t.TimeData == date).FirstAsync();  
     }
+        
+     
     
 }

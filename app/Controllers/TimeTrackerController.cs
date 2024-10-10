@@ -14,15 +14,13 @@ public class TimeTrackerController(
     ITimeTrackerService service
     ): ControllerBase
 {
-    
-    private readonly ITimeTrackerService _service = service;
 
     [HttpPost("timerbanks")]
     public async Task<ActionResult> CreateTimebanck(TimeBankModel timeBankModel)
     {
         try
         {
-            var postResult = await _service.CreateTimeTracker(timeBankModel);
+            var postResult = await service.CreateTimeTracker(timeBankModel);
 
             if (!postResult)
                 return BadRequest("Time already registered");
@@ -36,4 +34,26 @@ public class TimeTrackerController(
         }
        
     }
+
+    [HttpGet("timerbanks/date")]
+    public async Task<ActionResult> GetTimebanks(string date)
+    {
+        try
+        {
+            var getResult = await service.GetTimeTrackersByDate(date);
+            
+            if (getResult is null)
+            {
+                return NotFound("No time trackers found");
+            }
+            
+            return Ok(getResult);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
 }

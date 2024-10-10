@@ -1,8 +1,4 @@
-﻿using app.Adapters;
-using app.Adapters.Interfaces;
-using app.Controllers;
-using app.Entities;
-using app.Models;
+﻿using app.Controllers;
 using app.Services.Interfaces;
 using app.Tests.Test.Mocks;
 using Microsoft.AspNetCore.Mvc;
@@ -36,5 +32,26 @@ public class TimeTrackerControllerTest
         
         //Assert
         Assert.True(postResult is OkResult);
+    }
+
+    [Fact]
+    private async Task Should_Get_Time_Tracker()
+    {
+        //Arrange
+        DateTimeOffset dateTimeOffset = DateTimeOffset.Now;
+        var date = dateTimeOffset.ToString("d");
+        
+        var timeBankInput = MockTimebank.TimeBankInput();
+        
+        _timeTrackerService
+            .Setup(s => s.GetTimeTrackersByDate(date))
+            .ReturnsAsync(timeBankInput);
+        
+        //Act
+        var getResult = await _controller.GetTimebanks(date);
+        
+        //Assert
+        Assert.True(getResult is OkObjectResult);
+        
     }
 }

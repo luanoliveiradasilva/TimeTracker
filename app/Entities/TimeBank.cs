@@ -26,4 +26,7 @@ public class TimeBank
     [Column("clockout")]
     public string Clockout { get; set; }
     
+    [Column("description")]
+    public string Description { get; set; }
+    
 }

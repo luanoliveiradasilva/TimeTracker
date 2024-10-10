@@ -18,7 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TimeTrackerContext>(options => options.UseMySql
 (builder.Configuration.GetConnectionString("TimeTracker"), new MySqlServerVersion(new Version(8, 0, 26))));
-/*builder.Services.AddScoped<ITimeTrackerService, TimeTrackerService>();*/
+builder.Services.AddScoped<ITimeTrackerService, TimeTrackerService>();
 builder.Services.AddScoped<ITimeTrackerRepo, TimeTrackerRepo>();
 builder.Services.AddScoped<IBaseAdapter, BaseAdapter>();
 builder.Services.AddCors(options =>

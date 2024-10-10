@@ -7,4 +7,5 @@ public class TimeBankModel
     public string BreakTime { get; set; }
     public string Clockin { get; set; }
     public string Clockout { get; set; }
+    public string Description { get; set; }
 }

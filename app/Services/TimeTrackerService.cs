@@ -21,4 +21,13 @@ public class TimeTrackerService(
         
         return true;
     }
+
+    public async Task<TimeBankModel> GetTimeTrackersByDate(string date)
+    {
+        var select = await repo.GetTimeTracking(date);
+        
+        var returnAdpter =  baseAdapter.MapEntityToModel(select);
+        
+        return returnAdpter;
+    }
 }

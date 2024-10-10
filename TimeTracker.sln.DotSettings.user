@@ -1,5 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAbstractInvocation_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F34e54cf52b4a4c2b82645ccc3a46837e5e000_003F23_003Fa279aab8_003FAbstractInvocation_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAsyncValueTaskMethodBuilderT_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf_003FAsyncValueTaskMethodBuilderT_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ACastleProxyFactory_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F4e8315746988a4c77acdb2357d1b9f99c910c1fb9ee86eed9510dbfbfda7_003FCastleProxyFactory_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ADbContext_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F3bd4df5aff92cabbc4d630be64227073db1b8539b3a1e47786b4b189d7cdb7_003FDbContext_002Ecs_002Fz_003A2_002D1/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ADbContext_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003Faef445cb634212b1613e256a377eafe18f856b3e7a7a27899ec213ea7699f0_003FDbContext_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
@@ -45,6 +46,9 @@
     &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Controller.TimeTrackerControllerTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4a9fa5fb_002D6a18_002D4d86_002Da447_002D560b0be1a178/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Get_Time_Tracker" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\luann\Documents\Project Software\TimeTracker\app.Tests" Presentation="&amp;lt;app.Tests&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59be19fd_002D11f4_002D4642_002Da325_002D864683e38412/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Get_Time_Tracking" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Repository.TimeTrackerRepoTest.Should_Get_Time_Tracking&lt;/TestId&gt;&#xD;
@@ -55,10 +59,27 @@
     &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Repository.TimeTrackerRepoTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b4651eef_002D9982_002D4293_002Daf1a_002Da86072fb0eb5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Should_Create_Time_Tracking" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b4651eef_002D9982_002D4293_002Daf1a_002Da86072fb0eb5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Create_Time_Tracking" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Repository.TimeTrackerRepoTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Controller.TimeTrackerControllerTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Services.TimeTrackServiceTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bd7bf578_002Dcdc7_002D48d6_002Dbaa3_002Dd7e8d2a27816/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Get_TimeTrackService" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Services.TimeTrackServiceTest.Should_Get_TimeTrackService&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d1aca6ae_002Df6a4_002D46fe_002D94d5_002D6f0087e45de4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Should_Get_TimeTrackService #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Services.TimeTrackServiceTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Controller.TimeTrackerControllerTest.Should_Get_Time_Tracker&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Controller.TimeTrackerControllerTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fdaf3da7_002Dcacc_002D4c56_002Dbd02_002D2b3487328860/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Get_TimeTrackService #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::CCC3AAB6-50AF-4ACA-9B05-84C9913E769C::net8.0::app.Tests.Test.Services.TimeTrackServiceTest.Should_Get_TimeTrackService&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

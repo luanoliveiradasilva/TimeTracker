@@ -7,5 +7,5 @@ public interface ITimeTrackerRepo
 {
     Task<bool> AddTimeTracker(TimeBank timeBank);
     
-    IQueryable<TimeBank> GetTimeTracking(string date);
+    Task<TimeBank>  GetTimeTracking(string date);
 }

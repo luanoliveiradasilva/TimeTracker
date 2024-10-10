@@ -3,11 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace app.Infrastructure;
 
-public class TimeTrackerContext: DbContext
+public class TimeTrackerContext(DbContextOptions options): DbContext(options)
 {
-    
-    public TimeTrackerContext(){}
-    
-    public TimeTrackerContext(DbContextOptions<TimeTrackerContext> options) : base(options) { }
-    public virtual DbSet<TimeBank> TimeBanks { get; set; }
+    public DbSet<TimeBank> TimeBanks { get; set; }
 }
