@@ -5,6 +5,6 @@ namespace app.Adapters.Interfaces;
 
 public interface IBaseAdapter
 {
-    TimeBankModel MapEntityToModel(TimeBank timeBankEntity);
+    IEnumerable<TimeBankModel> MapEntityToModel(object entityOrList);
     TimeBank MapModelToEntity(TimeBankModel timeBankModels);
 }

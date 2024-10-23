@@ -9,24 +9,24 @@ public class TimeBank
     
     [Key]
     [Column("timebankId")]
-    public int TimebankId { get; set; }
+    public required int TimebankId { get; set; }
     
     [Column("dateTimeBank")]
-    public string TimeData { get; set; }
+    public required DateTime TimeData { get; set; }
     
     [Column("startTimebank")]
-    public string StartTime { get; set; }
+    public required string StartTime { get; set; }
     
     [Column("break")]
-    public string BreakTime { get; set; }
+    public required string BreakTime { get; set; }
     
     [Column("clockin")]
-    public string Clockin { get; set; }
+    public required string Clockin { get; set; }
     
     [Column("clockout")]
-    public string Clockout { get; set; }
+    public required string Clockout { get; set; }
     
     [Column("description")]
-    public string Description { get; set; }
+    public required string Description { get; set; }
     
 }

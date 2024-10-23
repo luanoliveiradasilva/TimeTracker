@@ -2,10 +2,10 @@
 
 public class TimeBankModel
 {
-    public string TimeData { get; set; }
-    public string StartTime { get; set; }
-    public string BreakTime { get; set; }
-    public string Clockin { get; set; }
-    public string Clockout { get; set; }
-    public string Description { get; set; }
+    public required DateTime TimeData { get; set; }
+    public required string StartTime { get; set; }
+    public required string BreakTime { get; set; }
+    public required string Clockin { get; set; }
+    public required string Clockout { get; set; }
+    public required string Description { get; set; }
 }

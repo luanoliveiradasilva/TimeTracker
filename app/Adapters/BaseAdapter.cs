@@ -7,20 +7,29 @@ namespace app.Adapters;
 public class BaseAdapter: IBaseAdapter
 {
     
-    public TimeBankModel  MapEntityToModel( TimeBank timeBankEntity)
+    public IEnumerable<TimeBankModel> MapEntityToModel(object entityOrList)
      {
-         var model = Activator.CreateInstance<TimeBankModel>();
+        if (entityOrList is IEnumerable<TimeBank> timeBankList)
+        {
+            var models = new List<TimeBankModel>();
 
-         var prop = GetProperty<TimeBankModel, TimeBank>();
+            foreach (var entity in timeBankList)
+            {
+                var model = MapSingleEntityToModel(entity);
+                models.Add(model);
+            }
 
-         foreach (var item in prop)
-         {
-             var value = timeBankEntity.GetType().GetProperty(item).GetValue(timeBankEntity);
-             model.GetType().GetProperty(item).SetValue(model, value);
-         }
+            return models;
+        }
+        else if(entityOrList is TimeBank timeBankEntity)
+        {
+            return new List<TimeBankModel> { MapSingleEntityToModel(timeBankEntity) };
 
-         return model;
-     }
+        }
+
+        throw new ArgumentException("O argumento deve ser um TimeBank ou IEnumerable<TimeBank>");
+
+    }
     
      public TimeBank MapModelToEntity(TimeBankModel timeBankModels)
      {
@@ -30,16 +39,31 @@ public class BaseAdapter: IBaseAdapter
 
          foreach (var property in propierties)
          {
-             var value = timeBankModels.GetType().GetProperty(property).GetValue(timeBankModels);
-             entity.GetType().GetProperty(property).SetValue(entity, value);
+             var value = timeBankModels.GetType().GetProperty(property)!.GetValue(timeBankModels);
+             entity.GetType().GetProperty(property)!.SetValue(entity, value);
          }
          return entity;
      }
 
-    private static List<string> GetProperty<TFrom, Tto>()
+    private TimeBankModel MapSingleEntityToModel(TimeBank timeBankEntity)
+    {
+        var model = Activator.CreateInstance<TimeBankModel>();
+
+        var prop = GetProperty<TimeBankModel, TimeBank>();
+
+        foreach (var item in prop)
+        {
+            var value = timeBankEntity.GetType().GetProperty(item)!.GetValue(timeBankEntity);
+            model.GetType().GetProperty(item)!.SetValue(model, value);
+        }
+
+        return model;
+    }
+
+    private static List<string> GetProperty<TFrom, TTo>()
     {
         var from = typeof(TFrom).GetProperties();
-        var to = typeof(Tto).GetProperties();
+        var to = typeof(TTo).GetProperties();
         
         var properties = new List<string>();
 

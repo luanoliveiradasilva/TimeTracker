@@ -21,15 +21,15 @@ public class TimeTrackerControllerTest
     private async Task Should_Create_Time_Tracker()
     {
         //Arrange
-        var inputTimeBank = MockTimebank.TimeBankInput();
-        
+        var inputTimeBank = MockTimebank.ListTimeBankInputs().First();
+
         _timeTrackerService
             .Setup(s => s.CreateTimeTracker(inputTimeBank))
             .ReturnsAsync(true);
-        
+
         //Act
         var postResult = await _controller.CreateTimebanck(inputTimeBank);
-        
+
         //Assert
         Assert.True(postResult is OkResult);
     }
@@ -38,20 +38,19 @@ public class TimeTrackerControllerTest
     private async Task Should_Get_Time_Tracker()
     {
         //Arrange
-        DateTimeOffset dateTimeOffset = DateTimeOffset.Now;
-        var date = dateTimeOffset.ToString("d");
-        
-        var timeBankInput = MockTimebank.TimeBankInput();
-        
+        DateTime date = new();
+
+        var timeBankInput = MockTimebank.ListTimeBankInputs();
+
         _timeTrackerService
             .Setup(s => s.GetTimeTrackersByDate(date))
             .ReturnsAsync(timeBankInput);
-        
+
         //Act
         var getResult = await _controller.GetTimebanks(date);
-        
+
         //Assert
         Assert.True(getResult is OkObjectResult);
-        
+
     }
 }

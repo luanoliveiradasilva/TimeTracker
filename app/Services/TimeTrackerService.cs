@@ -22,12 +22,21 @@ public class TimeTrackerService(
         return true;
     }
 
-    public async Task<TimeBankModel> GetTimeTrackersByDate(string date)
+    public async Task<IEnumerable<TimeBankModel>> GetTimeTrackersByDate(DateTime date)
     {
-        var select = await repo.GetTimeTracking(date);
+        var select = await repo.SelectTimeTrackingByDate(date);
+
+        var returnAdpter = baseAdapter.MapEntityToModel(select);
         
-        var returnAdpter =  baseAdapter.MapEntityToModel(select);
-        
+        return returnAdpter;
+    }
+
+    public async Task<IEnumerable<TimeBankModel>> GetTimeTrackersByMonth(DateTime month)
+    {
+        var select = await repo.GetTimeTrackingByMonth(month);
+
+        var returnAdpter = baseAdapter.MapEntityToModel(select);
+
         return returnAdpter;
     }
 }

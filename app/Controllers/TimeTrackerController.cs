@@ -1,7 +1,4 @@
-﻿using app.Adapters;
-using app.Adapters.Interfaces;
-using app.Entities;
-using app.Models;
+﻿using app.Models;
 using app.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,8 +9,9 @@ namespace app.Controllers;
 [Route("[controller]/v1/")]
 public class TimeTrackerController(
     ITimeTrackerService service
-    ): ControllerBase
+    ) : ControllerBase
 {
+
 
     [HttpPost("timerbanks")]
     public async Task<ActionResult> CreateTimebanck(TimeBankModel timeBankModel)
@@ -35,8 +33,8 @@ public class TimeTrackerController(
        
     }
 
-    [HttpGet("timerbanks/date")]
-    public async Task<ActionResult> GetTimebanks(string date)
+    [HttpGet("timerbanks/dates")]
+    public async Task<ActionResult> GetTimebanks(DateTime date)
     {
         try
         {
@@ -47,6 +45,28 @@ public class TimeTrackerController(
                 return NotFound("No time trackers found");
             }
             
+            return Ok(getResult);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+
+    [HttpGet("timerbanks/months")]
+    public async Task<ActionResult> GetTimeTrackerByMonth(DateTime month)
+    {
+        try
+        {
+            var getResult = await service.GetTimeTrackersByMonth(month);
+
+            if (getResult is null)
+            {
+                return NotFound("No time trackers by month found");
+            }
+
             return Ok(getResult);
         }
         catch (Exception e)
