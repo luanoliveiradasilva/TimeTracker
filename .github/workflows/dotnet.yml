@@ -44,14 +44,3 @@ jobs:
       
       - name: Deploy Using Docker Compose
         run: docker-compose -f docker-compose.dev.yml up -d
-
-  deploy-prod:
-    needs: [build-and-test]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Build Docker Image
-        run: docker build -t timetracker-prod:latest .
-      
-      - name: Deploy Using Docker Compose
-        run: docker-compose -f docker-compose.prod.yml up -d
