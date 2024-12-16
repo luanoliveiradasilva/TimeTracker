@@ -5,9 +5,9 @@ name: .Net
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "main", "dev" ]
   pull_request:
-    branches: [ "dev" ]
+    branches: [ "main", "dev" ]
 
 env:
   PATH_PROJECT_API: ./TimeTrackerBack/app
@@ -41,3 +41,11 @@ jobs:
     steps:
       - name: Deploy to Development Environment
         run: echo "Deploying to Development Environment"
+
+  deploy-prod:
+      needs: [build-and-test]
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main'
+      steps:
+        - name: Deploy to Production Environment
+          run: echo "Deploying to Production Environment"
