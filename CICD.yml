@@ -1,0 +1,46 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .Net
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+
+env:
+  PATH_PROJECT_API: ./TimeTrackerBack/app
+  PATH_PROJECT_API_TEST: ./TimeTrackerBack/app.Tests
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      
+      - name: Restore Dependencies
+        run: dotnet restore ${{ env.PATH_PROJECT_API }}
+
+      - name: Build API
+        run: dotnet build ${{ env.PATH_PROJECT_API }} -c Release --no-restore
+
+      - name: Run Tests
+        run: dotnet test ${{ env.PATH_PROJECT_API_TEST }} --verbosity minimal
+
+  deploy-dev:
+    needs: [build-and-test]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'
+    steps:
+      - name: Build Docker Image
+        run: docker build -t timetracker-dev:latest .
+      
+      - name: Deploy Using Docker Compose
+        run: docker-compose -f docker-compose.dev.yml up -d
