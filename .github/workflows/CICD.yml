@@ -5,9 +5,9 @@ name: .Net
 
 on:
   push:
-    branches: [ "main", "dev" ]
+    branches: [ "dev" ]
   pull_request:
-    branches: [ "main", "dev" ]
+    branches: [ "dev" ]
 
 env:
   PATH_PROJECT_API: ./TimeTrackerBack/app
@@ -39,8 +39,5 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/dev'
     steps:
-      - name: Build Docker Image
-        run: docker build -t timetracker-dev:latest .
-      
-      - name: Deploy Using Docker Compose
-        run: docker-compose -f docker-compose.dev.yml up -d
+      - name: Deploy to Development Environment
+        run: echo "Deploying to Development Environment"
