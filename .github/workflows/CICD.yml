@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -32,7 +32,7 @@ jobs:
         run: dotnet build ${{ env.PATH_PROJECT_API }} -c Release --no-restore
 
       - name: Run Tests
-        run: dotnet test ${{ env.PATH_PROJECT_API_TEST }} --verbosity minimal
+        run: dotnet test --no-build ${{ env.PATH_PROJECT_API_TEST }} --verbosity normal
 
   deploy-dev:
     needs: [build-and-test]
